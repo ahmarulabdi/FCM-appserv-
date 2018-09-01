@@ -34,9 +34,9 @@ class FCMAppServerService
     }
 
     /**
-     * kirim notif dengan topic
+     * sending notification by topic
      * @param $topic  topics fcm
-     * @return array berupa isi array assoc untuk field to
+     * @return array is an array assoc for field to
      */
     public function setToWithTopic($toWithTopic)
     {
@@ -44,9 +44,9 @@ class FCMAppServerService
     }
 
     /**
-     *  kirim notif dengan key token per device
-     * @param $key key fcm per device
-     * @return array assoc untuk field to
+     *  sending notification by device
+     * @param $key key fcm 
+     * @return array assoc for field to
      */
     public function setToWithKey($toWithKey)
     {
@@ -54,10 +54,10 @@ class FCMAppServerService
     }
 
     /**
-     * isi dari notifcation di android
+     * body of notifcation
      * @param $title title notificatino
-     * @param $body message notification
-     * @return array assoc untuk field notification
+     * @param $body body notification
+     * @return array assoc for field notification
      */
     public function setNotification($title, $body)
     {
@@ -66,30 +66,29 @@ class FCMAppServerService
 
 
     /**
-     * kirim request ke firebase untuk kirim notifikasi ke android device menggunakan CURL
+     * make request to firebase cloud messaging service for sending notification to app client through CURL
      * @param $to
      * @param $notification
      * @return array
      */
-    public
-    function send()
+    public function send()
     {
 
 
         /**
          * @var JSON STRING $payload
-         * set field menjadi json string
+         * set field to json
          */
         $payload = json_encode($this->field);
         /**
          * @var CURL $curl_session
-         *memulai sesi curl
+         * start  curl session
          */
         $curl_session = curl_init();
 
 
         /**
-         * setup CURL untuk firebase cloud message
+         * setup CURL for firebase cloud messaging
          */
         curl_setopt($curl_session, CURLOPT_URL, $this->path_to_fcm);
         curl_setopt($curl_session, CURLOPT_POST, true);
@@ -100,7 +99,7 @@ class FCMAppServerService
         curl_setopt($curl_session, CURLOPT_POSTFIELDS, $payload);
 
         /**
-         * hasil dari curl
+         * result of curl
          * @var CURL $curl_result
          */
         $curl_result = curl_exec($curl_session);

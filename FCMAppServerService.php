@@ -26,7 +26,7 @@
  * $fcm->send();
  */
 
-class FCMServiceToAndroid
+class FCMAppServerService
 {
 
     private $path_to_fcm = "https://fcm.googleapis.com/fcm/send";

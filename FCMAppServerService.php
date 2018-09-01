@@ -44,7 +44,7 @@ class FCMAppServerService
     }
 
     /**
-     *  sending notification by device
+     *  sending notification with key
      * @param $key key fcm 
      * @return array assoc for field to
      */

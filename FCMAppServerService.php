@@ -7,19 +7,13 @@
  * Date: 01/09/18
  * Time: 6:01
  *
- * library ini digunakan untuk mengirim request
- * pembuatan notifikasi ke Firebase Cloud Message via web
- * ke perangkat android yang terkoneksi dengan Firebase Console
- *
- *
- *
- * penggunaan dengan topic
+ * with subscribe to topic
  * $fcm = new FCMService();
  * $fcm->setFieldToWithTopic("foobar");
  * $fcm->setFieldNotification(["title" => "foo" , "body" => "bar" ]);
  * $fcm->send();
  *
- * penggunaan per device token
+ * with token
  * $fcm = new FCMService();
  * $fcm->setFieldToWithKey("foobar");
  * $fcm->setFieldNotification(["title" => "foo" , "body" => "bar" ]);
@@ -30,7 +24,7 @@ class FCMAppServerService
 {
 
     private $path_to_fcm = "https://fcm.googleapis.com/fcm/send";
-    private $firebase_server_key = "AAAAJvTs4h4:APA91bFjUccuPGPv79VUZscxOqQ7jsVSki7yH8724b6wGus4T1SGOtYLu6RqsomGIqOSWbtYX9TXyL58PgVGlU_cDHJPZ2-U8Q_IVZUMBws17IShJYv2Ycbs5i4sqJ57hqL7thcvOudJ";
+    private $firebase_server_key = "AAAAJvTs4h##################################OudJ";
     private $headers;
     private $field;
 
